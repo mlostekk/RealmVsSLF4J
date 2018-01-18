@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.10'
+    ext.java_version = JavaVersion.VERSION_1_8
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "io.realm:realm-gradle-plugin:4.3.1"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+
+    // build & sdk version
+    minSdkVersion = 18
+    sdkVersion = 27
+    buildToolsVersion = '27.0.2'
+
+    // library versions
+    supportLibrary = '27.0.2'
+    supportConstraintLayout = '1.0.2'
+    playServices = '11.6.2'
+
+    slf4j = '1.7.25'
+}
+
+
